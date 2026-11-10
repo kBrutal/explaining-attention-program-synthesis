@@ -1,0 +1,34 @@
+I'm analyzing attention head L{layer}H{head} of {model_display}. Below are examples of its attention patterns on several sentences. Each example shows, for each query token, a sample of key tokens it attends to with their attention weights.
+
+{examples}
+
+## Your task
+
+Write a Python function `predict_attention_map(sentence: str) -> tuple[list[str], np.ndarray]` that approximates this attention head's behavior.
+
+The function should:
+1. Take a raw sentence string as input
+2. Return a tuple of (tokens, attention_matrix) where:
+   - `tokens` is a list of {token_kind} token strings (use the `{p}_tokenize` helper)
+   - `attention_matrix` is an (n, n) numpy array where n = len(tokens)
+   - Each row should sum to 1.0 (row-stochastic)
+{mask_rule}
+
+## Available helper functions
+
+The following helper functions are available in your execution environment (do NOT redefine them):
+
+{helpers}
+
+## Instructions
+
+- Analyze the attention patterns carefully. Look for linguistic patterns like:
+  - Positional patterns (attend to previous token, first token, self, etc.)
+  - Syntactic patterns (attend to head of phrase, modifiers, etc.)
+  - Mixed patterns (some positional bias + syntactic component)
+- Use `{p}_tokenize()` to get tokens (NOT spacy tokenization)
+- Use `align_{p}_to_spacy()` or `align_spacy_to_{p}()` if you need linguistic features from spacy
+- Use {finalize} to finalize the matrix
+- Your function will be called on new sentences not shown above
+
+Write ONLY the function definition inside a single ```python code block. Do not include import statements for numpy or the helpers (they are pre-imported). Do not include test code or example usage.

@@ -1,0 +1,17 @@
+Below is a Python program that predicts the attention pattern of one attention head in {model_display}. For every token (row) it assigns weights over the tokens it attends to (columns).
+
+```python
+{src}
+```
+
+Classify the program by the attention behaviour it mostly implements, choosing exactly one of these six categories:
+
+- First Token: most weight goes to the first token of the input (an attention sink).
+- Coreference: tokens attend to earlier mentions of the same entity, word or name (repeated tokens, pronoun → antecedent).
+- Final Token: most weight goes to the last token, the sentence end, or end punctuation.
+- Syntactic: weights follow linguistic structure (dependency arcs, part of speech, heads/children, noun phrases, verbs and arguments).
+- Sequential: weights depend mainly on relative position (previous token, next token, a local window, the diagonal).
+- Uniform: weight is spread roughly evenly over the tokens a row can see.
+
+Most programs give the first token a large baseline weight because real heads use it as an attention sink. Ignore that sink when classifying: choose First Token only if attending to the first token is essentially all the program does. Otherwise classify by the program's distinctive rule, the logic that makes it differ from a plain first-token pattern. If it has several distinctive rules, pick the one that shapes the most rows. Answer with one short sentence of justification, then a final line of the form:
+CATEGORY: <category name>

@@ -1,0 +1,10 @@
+.env
+.venv/
+runs/
+data/
+__pycache__/
+*.pdf
+implementation_plan.md
+Decision.md
+Flow.md
+.DS_Store

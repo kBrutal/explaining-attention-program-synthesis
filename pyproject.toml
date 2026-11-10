@@ -1,0 +1,25 @@
+[project]
+name = "attn-progsynth"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=2.3.0",
+    "datasets>=5.1.0",
+    "en-core-web-sm",
+    "matplotlib>=3.11.2",
+    "nltk>=3.10.4",
+    "numpy>=2.4.6",
+    "openai>=3.40.0",
+    "pandas>=3.1.0",
+    "pyyaml>=6.0.3",
+    "spacy>=3.8.18",
+    "torch>=2.14.1",
+    "transformers>=5.21.0",
+]
+
+[tool.uv.sources]
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

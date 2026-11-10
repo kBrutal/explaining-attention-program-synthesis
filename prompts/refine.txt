@@ -1,0 +1,9 @@
+Your function scored a mean IoU of {score:.3f} against the real attention head on {n_sentences} sentences (IoU = sum of element-wise min / sum of element-wise max; 1.0 is a perfect match).
+{errors}
+Below are the sentences where it did best and worst. For each, compare the real attention pattern with your function's predicted pattern (same format as before).
+
+{examples}
+
+Revise the function so its predictions match the real attention patterns more closely. Keep the same signature and all requirements from the original task.
+
+Write ONLY the function definition inside a single ```python code block. Do not include import statements for numpy or the helpers (they are pre-imported). Do not include test code or example usage.
